@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(wallpapper.webp);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 1600px;
+    max-height: 800px;
+}
+#memory{
+    background-color: rgba(184, 98, 145, 0.568);
+    border: 2px solid rgba(7, 36, 7, 0.548);
+    box-shadow: 1px 1px 1px rgba(7, 27, 7, 0.589);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 700px;
+    height: 100%;
+    align-items: center;
+}
+
+#memory > div {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    transition: transform .5s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/*#memory > div:hover {
+    transform: rotateY(180deg);
+}*/
+
+.front, .back {
+    position: absolute;
+    width: 95%;
+    height: 150px;
+    line-height: 150px;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.back{
+    border: 2px solid rgb(128, 0, 70);
+    box-shadow: 5px 3px 4px rgba(141, 33, 51, 0.596);
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    background-color: rgba(243, 170, 207, 0.986);
+    transform: rotateY(-180deg);
+}
+.front{
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    border: 2px solid rgb(128, 0, 70);
+    box-shadow: 5px 3px 4px rgba(141, 33, 51, 0.596);
+    background-color: rgb(163, 45, 84);
+}
+.rotate{
+    transform: rotateY(180deg);
+    pointer-events: none;
+
+}
+p{
+    background-color: rgb(255, 199, 199);
+    border: 1px solid rgba(26, 24, 24, 0.041);
+    border-radius: 50%;
+    box-shadow: 1px 2px 3px rgba(112, 12, 29, 0.829);
+    display: inline-flex;
+    width: 150px;
+    height: 150px;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: 50px; 
+    
+    
+}
+button{
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    margin: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    
+}
+#btn{
+    border: none;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: rgb(253, 200, 209);
+    box-shadow: 1px 2px 3px rgba(99, 14, 28, 0.884);
+
+
+}
+.show{
+    display: block !important;
+}
+#win{
+    color: rgb(34, 141, 28);
+    font-size: 130px;
+    font-weight: 800;
+    background: rgba(209, 245, 208, 0.815);
+    width: 600px;
+    height: 400px;
+    line-height: 400px;
+    border-radius: 0;
+    border: none;
+    position: absolute;
+    text-align: center;
+    left: 400px;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.39);
+    margin: 0;
+    display: none;
+}
+.hide{
+    display: none !important;
+}
+#lose{
+    color: rgb(189, 26, 26);
+    background: rgba(0, 0, 0, 0.856);
+    border: none;
+    border-radius: 0;
+    width: 500px;
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+    font-size: 130px;
+    text-shadow: rgb(0, 0, 0) 2px 2px 1px ;
+    font-weight: 800;
+    position: absolute;
+    left: 400px;
+    display: none; 
+
+}
+.blink {
+    animation: blinker 1s step-start infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+}
+h1{
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    font-family: 'Cinzel';
+    padding-top: 20px;
+    color: rgb(85, 46, 52);
+
+}
+#play{
+    position: absolute;
+    bottom: 0;
+    border: none;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.603);
+    background-color: rgba(216, 147, 159, 0.959);
+}
+#play a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+#save{
+    font-size: 25px;
+    border: none;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.603);
+    background-color: rgba(255, 192, 203, 0.945);
+}
+input{
+    width: 200px;
+    height: 70px;
+    font-size: 25px;
+    margin: 20px;
+    border: 1px solid rgba(65, 68, 65, 0.356);
+    background: none;
+}
+
+@media screen and (max-width: 1413px){
+    #memory{
+        max-width: 600px;
+
+    }
+    #memory div{
+        width: 50px;
+        height: 50px;
+    }
+    #btn, #countdown{
+        width: 70px;
+        height: 70px;
+        font-size: 12px;
+    }
+}
